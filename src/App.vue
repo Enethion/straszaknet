@@ -1,29 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app dark class="primary lighten-5">
+    <v-container pa-0 elevation-15>
+      <v-layout>
+        <v-flex class="sidebar">
+          <v-navigation-drawer class="px-3 pt-3 primary" dark>
+            <p-header/>
+            <p-profile/>
+          </v-navigation-drawer>
+        </v-flex>
+        <v-flex>
+          <v-card light>
+            <router-view class="h100 pa-3" />
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import pHeader from '@/components/sidebar/Header'
+import pProfile from '@/components/sidebar/Profile'
+
+export default {
+  components: {
+    pHeader,
+    pProfile
   }
 }
+</script>
+
+<style lang="scss">
+
+.flex.sidebar {
+  flex: 0 0 auto;
+  height: 100vh;
+}
+
+.h100 {
+  min-height: 100vh;
+}
+
+.theme--dark {
+  color: #fff;
+}
+
 </style>
