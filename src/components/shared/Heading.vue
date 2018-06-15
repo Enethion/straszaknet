@@ -1,13 +1,15 @@
 <template>
-  <v-layout class="h24">
+  <v-layout class="p-heading">
     <v-flex class="heading">
-      <div class="heading-icon">
+      <div v-if="icon" class="heading-icon">
         <div>
           <v-icon v-text="icon"></v-icon>
         </div>
       </div>
       <div class="heading-text">
-        <h3><slot></slot></h3>
+        <h3>
+          <slot></slot>
+        </h3>
       </div>
     </v-flex>
     <v-flex class="line">
@@ -20,12 +22,21 @@
 
 <script>
 export default {
-  props: ['icon']
+  props: ['icon'],
+  data () {
+    return {}
+  },
+  mounted () {
+    const defaultColor = window.getComputedStyle(this.$el.querySelector('h3')).color
+    this.$el.querySelector('.heading-icon .icon').style.color = defaultColor
+    this.$el.querySelector('.line div div').style.borderColor = defaultColor
+    this.$el.querySelector('.heading-icon div').style.borderColor = defaultColor
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.h24 {
+.p-heading {
   height: 24px;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
@@ -40,27 +51,24 @@ export default {
     position: relative;
 
     .heading-icon {
-      display: inline-block;
-      position: relative;
-      width: 24px;
+      display: inline-flex;
       height: 24px;
-      margin: 0 1.5rem 0 1rem;
+      width: 34px * 1.42;
+      margin-right: 0.5rem;
+      justify-content: center;
 
       div {
-        position: absolute;
-        display: flex;
+        align-self: center;
+        display: inline-flex;
         width: 34px;
         height: 34px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
+        transform: rotate(45deg);
         border: 2px solid #fff;
+        justify-content: center;
 
         .icon {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-45deg);
+          align-self: center;
+          transform: rotate(-45deg);
         }
       }
     }
@@ -73,9 +81,11 @@ export default {
       vertical-align: top;
 
       h3 {
-        font-weight: 300;
+        font-weight: 400;
         text-transform: uppercase;
+        vertical-align: middle;
         font-size: 1.35rem;
+        line-height: 24px;
       }
     }
   }
