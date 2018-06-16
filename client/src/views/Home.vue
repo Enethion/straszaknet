@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <p-heading icon="work">Doświadczenie zawodowe</p-heading>
-    <ul class="mx-3">
-      <li><h3>asdgg</h3></li>
-    </ul>
+    <p-work-exp/>
+    <p-education/>
   </div>
 </template>
 
 <script>
+import pWorkExp from '@/components/resume/WorkExp'
+import pEducation from '@/components/resume/Education'
 
 export default {
-  name: 'home',
   components: {
+    pWorkExp,
+    pEducation
   }
 }
 </script>

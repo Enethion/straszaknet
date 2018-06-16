@@ -1,19 +1,17 @@
 <template>
   <v-app dark class="primary lighten-5">
-    <v-container pa-0 elevation-15 fluid>
+    <v-container pa-0 fluid>
       <v-layout>
-        <v-flex class="sidebar">
-          <v-navigation-drawer class="px-3 pt-3 primary" dark permanent>
-            <p-header/>
-            <p-profile/>
-            <p-contact/>
-          </v-navigation-drawer>
+        <v-flex class="sidebar px-3 pt-3 primary theme--dark">
+          <p-header/>
+          <p-profile/>
+          <p-contact/>
         </v-flex>
         <v-flex>
-          <v-card light class="primary--text text--darken-4">
+          <v-card light class="elevation-0 primary--text text--darken-4" height="100%">
             <v-layout>
-              <v-flex offset-lg2 lg8>
-                <router-view class="h100 pa-3"/>
+              <v-flex offset-lg2 lg8 class="">
+                <router-view class="pa-3" />
               </v-flex>
             </v-layout>
           </v-card>
@@ -47,13 +45,20 @@ export default {
   }
 }
 
-.flex.sidebar {
-  flex: 0 0 auto;
-  height: 100vh;
+.application {
+  font-family: Lato, sans-serif !important;
 }
 
-.h100 {
+.container {
   min-height: 100vh;
+  height: 100%;
+}
+
+.flex.sidebar {
+  flex: 0 0 auto;
+  max-width: 300px;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .theme--dark {

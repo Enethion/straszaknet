@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="heading-text">
-        <h3>
+        <h3 class="">
           <slot></slot>
         </h3>
       </div>
@@ -29,7 +29,7 @@ export default {
   mounted () {
     const defaultColor = window.getComputedStyle(this.$el.querySelector('h3')).color
     this.$el.querySelector('.heading-icon .icon').style.color = defaultColor
-    this.$el.querySelector('.line div div').style.borderColor = defaultColor
+    this.$el.querySelector('.line div div').style.background = defaultColor
     this.$el.querySelector('.heading-icon div').style.borderColor = defaultColor
   }
 }
@@ -99,9 +99,10 @@ export default {
 
       > div {
         flex: 1 1 auto;
-        border: 1px solid #fff;
+        height: 3px;
         align-self: center;
-        transform: translate(1.15rem, 0);
+        margin-right: -1.15rem;
+        margin-left: 1rem;
       }
     }
   }

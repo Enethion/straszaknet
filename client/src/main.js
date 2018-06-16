@@ -4,6 +4,7 @@ import router from '@/router'
 import store from '@/store/index'
 
 import 'vuetify/dist/vuetify.min.css'
+import './assets/css/latofonts.css'
 import { sync } from 'vuex-router-sync'
 import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
