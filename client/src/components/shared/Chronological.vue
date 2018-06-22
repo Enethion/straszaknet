@@ -33,6 +33,8 @@ li {
 
 article {
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+
   header {
     text-transform: uppercase;
 
@@ -64,6 +66,10 @@ article {
       margin-top: -0.5rem;
       margin-bottom: 0.2rem;
     }
+  }
+
+  > p {
+    margin-bottom: 0;
   }
 }
 </style>

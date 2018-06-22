@@ -2,7 +2,7 @@
   <v-app dark class="primary lighten-5">
     <v-container pa-0 fluid>
       <v-layout>
-        <v-flex class="sidebar px-3 pt-3 primary theme--dark">
+        <v-flex class="sidebar pl-4 pr-3 pt-4 primary theme--dark">
           <p-header/>
           <p-profile/>
           <p-contact/>
@@ -11,7 +11,7 @@
           <v-card light class="elevation-0 primary--text text--darken-4" height="100%">
             <v-layout>
               <v-flex offset-lg2 lg8 class="">
-                <router-view class="pa-3" />
+                <router-view class="pa-3 pl-3" />
               </v-flex>
             </v-layout>
           </v-card>
@@ -58,7 +58,6 @@ export default {
   flex: 0 0 auto;
   max-width: 300px;
   min-height: 100vh;
-  height: 100%;
 }
 
 .theme--dark {

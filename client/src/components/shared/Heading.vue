@@ -39,7 +39,7 @@ export default {
 .p-heading {
   height: 24px;
   margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 
   .heading,
   .line {
@@ -85,7 +85,6 @@ export default {
         text-transform: uppercase;
         vertical-align: middle;
         font-size: 1.35rem;
-        line-height: 24px;
       }
     }
   }
@@ -101,7 +100,7 @@ export default {
         flex: 1 1 auto;
         height: 3px;
         align-self: center;
-        margin-right: -1.15rem;
+        margin-right: -1.24rem;
         margin-left: 1rem;
       }
     }

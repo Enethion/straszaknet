@@ -15,6 +15,13 @@ export default {
     return {
       workExp: [
         {
+          title: 'M101JS: MongoDB for Node.js Developers',
+          place: 'MongoDB University',
+          yearStart: 2016,
+          yearEnd: 2016,
+          description: null
+        },
+        {
           title: 'Inżynier informatyk',
           place: 'Wyższa Szkoła Biznesu w Dąbrowie Górniczej',
           yearStart: 2010,

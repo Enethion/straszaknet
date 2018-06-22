@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="pie_chart">Umiejętności zawodowe</p-heading>
+    <p-heading icon="pie_chart">Biegłość</p-heading>
     <v-layout px-3  justify-space-between wrap>
       <p-skill class="xs5" v-for="skill in skills" :key="skill.title" :skill="skill" />
     </v-layout>
@@ -15,28 +15,40 @@ export default {
     return {
       skills: [
         {
-          title: 'OOP',
-          value: 80 // in %
-        },
-        {
-          title: 'MVC',
+          title: 'PHP7',
           value: 75 // in %
         },
         {
-          title: 'REST',
+          title: 'Laravel',
+          value: 60 // in %
+        },
+        {
+          title: 'VueJS',
           value: 55 // in %
         },
         {
-          title: 'TDD',
+          title: 'JavaScript',
           value: 50 // in %
         },
         {
-          title: 'SPA',
+          title: 'CSS',
+          value: 70 // in %
+        },
+        {
+          title: 'HTML',
+          value: 85 // in %
+        },
+        {
+          title: 'Bootstrap CSS',
+          value: 45 // in %
+        },
+        {
+          title: 'Materialize CSS',
           value: 40 // in %
         },
         {
-          title: 'Interface design',
-          value: 40 // in %
+          title: 'AngularJS',
+          value: 30 // in %
         }
       ]
     }

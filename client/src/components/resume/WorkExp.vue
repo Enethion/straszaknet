@@ -27,6 +27,20 @@ export default {
           yearStart: 2014,
           yearEnd: 2014,
           description: 'Poprawki i przeniesienie do nowego systemu skryptów zakupu, poprawki i tworzenie elementów front-endu, rozwój istniejących rozwiązań'
+        },
+        {
+          title: 'Informatyk',
+          place: 'Xeox.pl',
+          yearStart: 2013,
+          yearEnd: 2013,
+          description: 'Testowanie aplikacji CMS na frameworku Laravel, pomoc przy wdrażaniu systemu dla sklepu internetowego firmy'
+        },
+        {
+          title: 'Programista PHP',
+          place: 'PIFE Katowice',
+          yearStart: 2011,
+          yearEnd: 2011,
+          description: 'Projekt i kodowanie strony internetowej'
         }
       ]
     }
