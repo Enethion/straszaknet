@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="pie_chart">Biegłość</p-heading>
+    <p-heading icon="wb_incandescent" icon-rotate="180">Biegłość</p-heading>
     <v-layout px-3  justify-space-between wrap>
       <p-skill class="xs5" v-for="skill in skills" :key="skill.title" :skill="skill" />
     </v-layout>

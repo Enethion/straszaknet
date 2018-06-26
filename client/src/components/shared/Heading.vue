@@ -3,7 +3,7 @@
     <v-flex class="heading">
       <div v-if="icon" class="heading-icon">
         <div>
-          <v-icon v-text="icon"></v-icon>
+          <v-icon v-text="icon" :class="iconClass"></v-icon>
         </div>
       </div>
       <div class="heading-text">
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  props: ['icon'],
+  props: ['icon', 'iconRotate'],
   data () {
     return {}
   },
@@ -31,6 +31,11 @@ export default {
     this.$el.querySelector('.heading-icon .icon').style.color = defaultColor
     this.$el.querySelector('.line div div').style.background = defaultColor
     this.$el.querySelector('.heading-icon div').style.borderColor = defaultColor
+  },
+  computed: {
+    iconClass () {
+      return `rot${this.iconRotate}`
+    }
   }
 }
 </script>
@@ -69,6 +74,18 @@ export default {
         .icon {
           align-self: center;
           transform: rotate(-45deg);
+
+          &.rot90 {
+            transform: rotate(90deg - 45deg);
+          }
+
+          &.rot180 {
+            transform: rotate(180deg - 45deg);
+          }
+
+          &.rot270 {
+            transform: rotate(270deg - 45deg);
+          }
         }
       }
     }

@@ -70,6 +70,7 @@ export default {
     justify-content: center;
 
     * {
+      font-size: 1rem;
       align-self: center;
       line-height: 1;
       color: #fff;

@@ -3,9 +3,10 @@
     <v-container pa-0 fluid>
       <v-layout>
         <v-flex class="sidebar pl-4 pr-3 pt-4 primary theme--dark">
-          <p-header/>
-          <p-profile/>
-          <p-contact/>
+          <p-header />
+          <p-profile class="section" />
+          <p-contact class="section" />
+          <p-hobbies class="section" />
         </v-flex>
         <v-flex>
           <v-card light class="elevation-0 primary--text text--darken-4" height="100%">
@@ -25,12 +26,14 @@
 import pHeader from '@/components/sidebar/Header'
 import pProfile from '@/components/sidebar/Profile'
 import pContact from '@/components/sidebar/Contact'
+import pHobbies from '@/components/sidebar/Hobbies'
 
 export default {
   components: {
     pHeader,
     pProfile,
-    pContact
+    pContact,
+    pHobbies
   }
 }
 </script>
@@ -58,6 +61,10 @@ export default {
   flex: 0 0 auto;
   max-width: 300px;
   min-height: 100vh;
+
+  .section {
+    margin-top: 4rem;
+  }
 }
 
 .theme--dark {

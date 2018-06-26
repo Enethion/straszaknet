@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
 li {
   font-size: 1.5rem;
+  margin-left: 20px;
 }
 
 article {
