@@ -3,7 +3,7 @@
     <v-flex class="heading">
       <div v-if="icon" class="heading-icon">
         <div>
-          <v-icon v-text="icon" :class="iconClass"></v-icon>
+          <v-icon v-text="`mdi-${icon}`" :class="iconClass"></v-icon>
         </div>
       </div>
       <div class="heading-text">

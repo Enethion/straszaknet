@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p-heading icon="work">Doświadczenie zawodowe</p-heading>
-    <ul class="mx-3">
+    <p-heading icon="briefcase">Doświadczenie zawodowe</p-heading>
+    <ul class="mx-3 diamond">
       <p-chronological v-for="work in workExp" :key="work.title" :entry="work"></p-chronological>
     </ul>
   </div>

@@ -2,16 +2,14 @@
   <div>
     <p-heading icon="account">Kontakt</p-heading>
     <div class="text-xs-justify">
-      <div class="contact-row" v-for="contact in contacts" :key="contact.icon">
+      <div class="contact-row" v-for="link in socialmedia" :key="link.icon">
         <div class="icon-framed">
           <div>
-            <v-icon class="primary--text" v-text="`mdi-${contact.icon}`"></v-icon>
+            <v-icon class="primary--text" v-text="`mdi-${link.icon}`"></v-icon>
           </div>
         </div>
         <div class="contact-text">
-          <div v-if="contact.link == 'none'" v-html="contact.value"></div>
-          <a v-if="contact.link == 'email'" :href="'mailto:'+contact.value" v-html="contact.value"></a>
-          <a v-if="contact.link == 'url'" :href="contact.value" v-html="contact.value"></a>
+          <a :href="link.url" v-html="link.text"></a>
         </div>
       </div>
     </div>
@@ -23,11 +21,36 @@ export default {
   data () {
     return {
       contacts: [
-        { icon: 'phone', value: '+48 516-539-185', link: 'none' },
-        { icon: 'email', value: 'piotr@straszak.net', link: 'email' },
-        { icon: 'earth', value: 'http://straszak.net/', link: 'url' },
-        { icon: 'map-marker', value: 'ul. Nad Sudołem 32/65<br>31-228 Kraków', link: 'none' }
-      ]
+        { value: 'piotr-straszak', social: 'linkedin' },
+        { value: 'Enethion', social: 'github' }
+      ],
+      mediaData: {
+        'linkedin': {
+          'url': 'https://www.linkedin.com/in/',
+          'icon': 'linkedin'
+        },
+        'github': {
+          'url': 'https://github.com/',
+          'icon': 'github-face'
+        }
+      }
+    }
+  },
+  computed: {
+    socialmedia () {
+      let data = []
+
+      for (let media of this.contacts) {
+        const url = `${this.mediaData[media.social].url}${media.value}`
+        const icon = this.mediaData[media.social].icon
+        data.push({
+          url,
+          icon,
+          'text': `/${media.value}`
+        })
+      }
+
+      return data
     }
   }
 }

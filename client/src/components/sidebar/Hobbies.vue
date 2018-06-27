@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="toys">Hobby</p-heading>
+    <p-heading icon="chess-knight">Hobby</p-heading>
     <v-layout px-3 justify-space-between wrap>
       <ul>
         <li v-for="hobby in hobbies" :key="hobby.title">
@@ -22,7 +22,7 @@ export default {
           title: 'Piwowarstwo'
         },
         {
-          title: 'Gitara'
+          title: 'Gra na gitarze'
         },
         {
           title: 'Gry Fabularne'
@@ -38,14 +38,8 @@ export default {
 
 <style lang="scss" scoped>
 ul {
-  margin-left: 20px;
-
   li {
-    font-size: 1.5rem;
-
-    span {
-      font-size: 1.1rem;
-    }
+    margin-bottom: 0.6rem;
   }
 }
 </style>

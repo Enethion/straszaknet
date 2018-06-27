@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="assignment">Edukacja</p-heading>
+    <p-heading icon="school">Edukacja</p-heading>
     <ul class="mx-3">
       <p-chronological v-for="work in workExp" :key="work.title" :entry="work"></p-chronological>
     </ul>

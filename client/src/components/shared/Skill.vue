@@ -1,7 +1,6 @@
 <template>
   <v-flex class="skill-root">
         <v-layout align-center>
-          <v-flex class="skill-bullet">&#8226;</v-flex>
           <v-flex class="skill-title" v-text="skill.title" />
           <v-flex class="skill-value" v-if="skill.value">
             <v-progress-linear :value="skill.value"></v-progress-linear>
@@ -31,6 +30,24 @@ export default {
 <style lang="scss" scoped>
 .skill-root {
   margin: 0.25rem 0;
+
+  > * {
+    margin: 0 0.25rem;
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+    position: relative;
+
+    &:before {
+      font-size: 1rem;
+      content: '\25A0';
+      display: block;
+      flex: 1 1 auto;
+      position: absolute;
+      transform: rotate(45deg);
+      margin-top: -0.05em;
+      left: 0;
+    }
+  }
 }
 
 .skill-bullet {
