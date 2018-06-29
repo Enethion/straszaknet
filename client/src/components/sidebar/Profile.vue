@@ -1,11 +1,27 @@
 <template>
   <article>
     <p-heading icon="clipboard-text">Profil</p-heading>
-    <div class="text-xs-justify">
-      <strong>Lorem ipsum dolor</strong> sit amet consectetur, adipisicing elit. Dolore aliquid consequuntur cum tenetur commodi aut. Dolorem autem, nobis aperiam, eligendi cupiditate explicabo rerum beatae consequatur praesentium, aut nihil sapiente dolore.
-    </div>
+    <div class="text-xs-justify" v-html="profile" />
   </article>
 </template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState('profile', [
+      'profile'
+    ])
+  },
+  methods: {
+    ...mapActions('profile', ['fetchProfile'])
+  },
+  mounted () {
+    this.fetchProfile()
+  }
+}
+</script>
 
 <style lang="scss" scoped>
   div{

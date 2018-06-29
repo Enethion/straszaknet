@@ -10,7 +10,7 @@
         </div>
         <div class="contact-text">
           <div v-if="contact.link == 'none'" v-html="contact.value"></div>
-          <a v-if="contact.link == 'email'" :href="'mailto:'+contact.value" v-html="contact.value"></a>
+          <a v-if="contact.link == 'email'" :href="`mailto:${contact.value}`" v-html="contact.value"></a>
           <a v-if="contact.link == 'url'" :href="contact.value" v-html="contact.value"></a>
         </div>
       </div>
@@ -19,16 +19,19 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
-  data () {
-    return {
-      contacts: [
-        { icon: 'phone', value: '+48 516-539-185', link: 'none' },
-        { icon: 'email', value: 'piotr@straszak.net', link: 'email' },
-        { icon: 'earth', value: 'http://straszak.net/', link: 'url' },
-        { icon: 'map-marker', value: 'ul. Nad Sudołem 32/65<br>31-228 Kraków', link: 'none' }
-      ]
-    }
+  computed: {
+    ...mapState('contact', [
+      'contacts'
+    ])
+  },
+  methods: {
+    ...mapActions('contact', ['fetchContacts'])
+  },
+  mounted () {
+    this.fetchContacts()
   }
 }
 </script>

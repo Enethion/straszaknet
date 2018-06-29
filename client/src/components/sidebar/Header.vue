@@ -2,7 +2,7 @@
   <div>
     <div class="photo-framed">
       <div>
-        <img src="@/assets/logo.png" class="img-responsive" alt="logo">
+        <img src="@/assets/images/profile-photo.png" class="img-responsive" alt="logo">
       </div>
     </div>
     <header>
