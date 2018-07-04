@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="account">Kontakt</p-heading>
+    <p-heading icon="account-group">Socialmedia</p-heading>
     <div class="text-xs-justify">
       <div class="contact-row" v-for="link in socialmedia" :key="link.icon">
         <div class="icon-framed">
