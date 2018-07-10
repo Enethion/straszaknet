@@ -1,4 +1,4 @@
-import HTTP from '@/http.js'
+// import HTTP from '@/http.js'
 
 export default {
   namespaced: true,
@@ -12,15 +12,20 @@ export default {
   },
   actions: {
     fetchProfile ({ commit, state }) {
-      return HTTP()
-        .get('profile')
-        .then(({ data }) => {
-          commit('setProfile', data)
-        })
-        .catch(() => {
-          const data = `<strong>Lorem ipsum dolor</strong> sit amet consectetur, adipisicing elit. Dolore aliquid consequuntur cum tenetur commodi aut. Dolorem autem, nobis aperiam, eligendi cupiditate explicabo rerum beatae consequatur praesentium, aut nihil sapiente dolore.`
-          commit('setProfile', data)
-        })
+      // return HTTP()
+      //   .get('profile')
+      //   .then(({ data }) => {
+      //     commit('setProfile', data)
+      //   })
+
+      const data = `<strong>PHP Developer za dnia.</strong> Piwowar,
+      gitarzysta, stwórca i niszczyciel światów
+      nocą. Staram się by kod, który piszę, był
+      coraz lepszy. Jestem świadom swoich
+      braków i chętnie korzystam z wiedzy
+      innych, by je załatać. Robię to co lubię i
+      lubię to co robię.`
+      commit('setProfile', data)
     }
   },
   getters: {}

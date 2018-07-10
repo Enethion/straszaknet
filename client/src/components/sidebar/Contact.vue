@@ -2,7 +2,7 @@
   <div>
     <p-heading icon="account">Kontakt</p-heading>
     <div class="text-xs-justify">
-      <div class="contact-row" v-for="contact in contacts" :key="contact.icon">
+      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" :class="isHiddenClass(contact.isHidden)">
         <div class="icon-framed">
           <div>
             <v-icon class="primary--text" v-text="`mdi-${contact.icon}`"></v-icon>
@@ -28,7 +28,10 @@ export default {
     ])
   },
   methods: {
-    ...mapActions('contact', ['fetchContacts'])
+    ...mapActions('contact', ['fetchContacts']),
+    isHiddenClass (isHidden) {
+      return isHidden ? 'print-only' : ''
+    }
   },
   mounted () {
     this.fetchContacts()
