@@ -22,9 +22,9 @@ export default {
       //   })
 
       const data = [
-        { icon: 'phone', value: '+48 516-539-185', link: 'none' },
-        { icon: 'email', value: 'piotr@straszak.net', link: 'email' },
-        { icon: 'earth', value: 'http://straszak.net/', link: 'url' },
+        { icon: 'phone', value: '+48 516-539-185', link: 'none', isHidden: true },
+        { icon: 'email', value: 'piotr@straszak.net', link: 'email', isHidden: false },
+        { icon: 'earth', value: 'http://straszak.net/', link: 'url', isHidden: false },
         { icon: 'map-marker', value: 'ul. Nad Sudołem 32/65<br>31-228 Kraków', link: 'none', isHidden: true }
       ]
 

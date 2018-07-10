@@ -2,7 +2,7 @@
   <div>
     <p-heading icon="account">Kontakt</p-heading>
     <div class="text-xs-justify">
-      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" :class="isHiddenClass(contact.isHidden)">
+      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" v-if="!contact.isHidden">
         <div class="icon-framed">
           <div>
             <v-icon class="primary--text" v-text="`mdi-${contact.icon}`"></v-icon>
