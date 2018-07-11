@@ -2,7 +2,7 @@
   <div>
     <p-heading icon="chart-pie">Umiejętności zawodowe</p-heading>
     <v-layout px-3  justify-space-between wrap>
-      <p-skill class="xs5" v-for="skill in skills" :key="skill.title" :skill="skill" />
+      <p-skill class="xs12 md5" v-for="skill in skills" :key="skill.title" :skill="skill" />
     </v-layout>
   </div>
 </template>

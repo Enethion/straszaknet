@@ -2,7 +2,7 @@
   <div>
     <p-heading icon="account">Kontakt</p-heading>
     <div class="text-xs-justify">
-      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" v-if="!contact.isHidden">
+      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" v-if="contact.isHidden || isPrint">
         <div class="icon-framed">
           <div>
             <v-icon class="primary--text" v-text="`mdi-${contact.icon}`"></v-icon>
@@ -22,19 +22,29 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
+  data () {
+    return {
+      isPrint: window.matchMedia('print').matches
+    }
+  },
   computed: {
     ...mapState('contact', [
       'contacts'
     ])
   },
   methods: {
-    ...mapActions('contact', ['fetchContacts']),
-    isHiddenClass (isHidden) {
-      return isHidden ? 'print-only' : ''
-    }
+    ...mapActions('contact', ['fetchContacts'])
   },
   mounted () {
     this.fetchContacts()
+
+    window.onbeforeprint = () => {
+      this.isPrint = true
+    }
+
+    window.onafterprint = () => {
+      this.isPrint = false
+    }
   }
 }
 </script>

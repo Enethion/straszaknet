@@ -8,6 +8,7 @@
           <p-contact class="section" />
           <p-hobbies class="section" />
           <p-networking class="section" />
+          <p-languages class="section" />
         </v-flex>
         <v-flex>
           <v-card light class="elevation-0 primary--text text--darken-4" height="100%">
@@ -34,6 +35,7 @@ import pProfile from '@/components/sidebar/Profile'
 import pContact from '@/components/sidebar/Contact'
 import pHobbies from '@/components/sidebar/Hobbies'
 import pNetworking from '@/components/sidebar/Networking'
+import pLanguages from '@/components/sidebar/Languages'
 
 export default {
   components: {
@@ -41,7 +43,8 @@ export default {
     pProfile,
     pContact,
     pHobbies,
-    pNetworking
+    pNetworking,
+    pLanguages
   }
 }
 </script>
@@ -53,6 +56,15 @@ export default {
   }
   html {
     font-size: 12pt;
+
+    .flex.md5 {
+      -ms-flex-preferred-size: 41.66666666666667% !important;
+      flex-basis: 41.66666666666667% !important;
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      max-width: 41.66666666666667% !important;
+    }
   }
 
   .no-print {
@@ -124,7 +136,7 @@ ul {
   }
 }
 
-.footer{
+.footer {
   p {
     margin-bottom: 0;
     width: 100%;
