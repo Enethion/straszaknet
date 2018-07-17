@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p-heading icon="translate">Języki obce</p-heading>
+    <p-heading icon="translate">Zdolności językowe</p-heading>
     <v-layout px-3  justify-space-between wrap>
       <p-skill class="xs12" skill-color="white" v-for="lang in langs" :key="lang.title" :skill="lang" />
     </v-layout>
