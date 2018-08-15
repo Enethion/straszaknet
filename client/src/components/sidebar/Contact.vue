@@ -2,15 +2,15 @@
   <div>
     <p-heading icon="account">Kontakt</p-heading>
     <div class="text-xs-justify">
-      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" v-if="!contact.isHidden || isPrint">
+      <div class="contact-row" v-for="contact in contacts" :key="contact.icon" v-if="!contact.isHidden || isPrintView">
         <div class="icon-framed">
           <div>
             <v-icon class="primary--text" v-text="`mdi-${contact.icon}`"></v-icon>
           </div>
         </div>
         <div class="contact-text">
-          <div v-if="contact.link == 'none'" v-html="contact.value"></div>
-          <a v-if="contact.link == 'email'" :href="`mailto:${contact.value}`" v-html="contact.value"></a>
+          <div v-if="contact.link == 'none'" v-html="contact.value" />
+          <email v-if="contact.link == 'email'" :email="contact.value" />
           <a v-if="contact.link == 'url'" :href="contact.value" v-html="contact.value"></a>
         </div>
       </div>
@@ -20,6 +20,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import Email from '@/components/shared/Email'
 
 export default {
   data () {
@@ -30,21 +31,17 @@ export default {
   computed: {
     ...mapState('contact', [
       'contacts'
-    ])
+    ]),
+    ...mapState('globals', ['isPrintView'])
   },
   methods: {
     ...mapActions('contact', ['fetchContacts'])
   },
   mounted () {
     this.fetchContacts()
-
-    window.onbeforeprint = () => {
-      this.isPrint = true
-    }
-
-    window.onafterprint = () => {
-      this.isPrint = false
-    }
+  },
+  components: {
+    Email
   }
 }
 </script>
